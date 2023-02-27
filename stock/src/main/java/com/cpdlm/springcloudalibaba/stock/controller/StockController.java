@@ -1,4 +1,4 @@
-package order.controller;
+package com.cpdlm.springcloudalibaba.stock.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,17 +12,13 @@ import org.springframework.web.client.RestTemplate;
  * @date 2020-09-21
  */
 @RestController
-@RequestMapping("/order")
-public class OrderController {
+@RequestMapping("/stock")
+public class StockController {
 
-    @Autowired
-    public RestTemplate restTemplate;
-
-    @RequestMapping("/add")
-    public String add(){
-        System.out.println("下单成功");
-        restTemplate.getForObject("http:localhost")
-        return "success order";
+    @RequestMapping("/reduct")
+    public String reduct(){
+        System.out.println("库存扣减");
+        return "success reduct";
     }
 
 }

@@ -1,4 +1,4 @@
-package com.cpdlm.springcloudalibaba;
+package com.cpdlm.springcloudalibaba.order;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

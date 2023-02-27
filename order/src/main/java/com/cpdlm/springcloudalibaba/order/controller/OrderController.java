@@ -1,4 +1,4 @@
-package com.cpdlm.springcloudalibaba.controller;
+package com.cpdlm.springcloudalibaba.order.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,8 +23,8 @@ public class OrderController {
     @RequestMapping("/add")
     public String add(){
         System.out.println("下单成功");
-        restTemplate.getForObject("http:localhost")
-        return "success order";
+        String msg = restTemplate.getForObject("http://localhost:8011/stock/reduct", String.class);
+        return " success order "+msg;
     }
 
 }
