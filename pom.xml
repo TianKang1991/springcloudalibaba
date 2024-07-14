@@ -3,15 +3,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <modules>
-        <module>Order</module>
+        <module>order</module>
         <module>stock</module>
+        <module>order-nacos</module>
+        <module>stock-nacos</module>
     </modules>
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.11.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
+
     <groupId>com.cpdlm</groupId>
     <artifactId>springcloudalibaba</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -20,8 +17,9 @@
     <packaging>pom</packaging>
     <properties>
         <java.version>1.8</java.version>
-        <alibaba.cloud>2.2.5.RELEASE</alibaba.cloud>
-        <springframework.cloud>Hoxton.SR12</springframework.cloud>
+        <spring-cloud-alibaba-cloud.version>2.2.5.RELEASE</spring-cloud-alibaba-cloud.version>
+        <springframework-cloud.version>Hoxton.SR8</springframework-cloud.version>
+        <spring-boot.version>2.3.11.RELEASE</spring-boot.version>
     </properties>
     <dependencies>
         <dependency>
@@ -38,18 +36,26 @@
 
     <dependencyManagement>
         <dependencies>
-            <!--alibaba 版本管理 -->
+            <!--springboot版本管理-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-parent</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--springcloudalibaba 版本管理 -->
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-                <version>${alibaba.cloud}</version>
+                <version>${spring-cloud-alibaba-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${springframework.cloud}</version>
+                <version>${springframework-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
