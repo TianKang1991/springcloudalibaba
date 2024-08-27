@@ -20,6 +20,7 @@
         <spring-cloud-alibaba-cloud.version>2.2.5.RELEASE</spring-cloud-alibaba-cloud.version>
         <springframework-cloud.version>Hoxton.SR8</springframework-cloud.version>
         <spring-boot.version>2.3.11.RELEASE</spring-boot.version>
+        <maven-plugin.version>2.5.2</maven-plugin.version>
     </properties>
     <dependencies>
         <dependency>
@@ -67,6 +68,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${maven-plugin.version}</version>
             </plugin>
         </plugins>
     </build>
